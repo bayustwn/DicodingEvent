@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".ui.activity.DetailEventActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.activity.DetailEventActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fav_button_container"
+                android:layout_marginBottom="-20dp"
+                android:layout_width="50dp"
+                app:cardCornerRadius="10dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:backgroundTint="@color/category_bg"
+                >
+
+                <ImageView
+                    android:id="@+id/fav_button"
+                    android:contentDescription="@string/unfavorite"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/not_favorite" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:contentDescription="@string/master_image"
+                android:id="@+id/detail_event_image"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:src="@drawable/ic_launcher_background" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/detail_shape"
+                android:layout_marginTop="-50dp"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_event_image"
+                app:layout_constraintVertical_bias="1.0">
+
+                <androidx.cardview.widget.CardView
+                    android:backgroundTint="@color/category_bg"
+                    android:id="@+id/event_participants_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toStartOf="@+id/event_category_container"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:id="@+id/participant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginVertical="8dp"
+                        android:textSize="14sp"
+                        tools:text="2000 Peserta"
+                        android:textColor="@color/black" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/event_quota_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/category_bg"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_participants_container">
+
+                    <TextView
+                        android:id="@+id/quota"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginVertical="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="2000 Peserta" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/event_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/time_event"
+                    tools:text="@string/event_name" />
+
+                <TextView
+                    android:id="@+id/event_summary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_name"
+                    tools:text="@string/event_name" />
+
+                <ImageView
+                    android:contentDescription="@string/location"
+                    android:id="@+id/location_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/location"
+                    app:layout_constraintEnd_toStartOf="@+id/event_location"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_quota_container" />
+
+                <TextView
+                    android:id="@+id/event_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/location_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/owner_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/location_icon"
+                    app:layout_constraintTop_toTopOf="@+id/location_icon"
+                    tools:text="Online" />
+
+                <ImageView
+                    android:contentDescription="@string/owner"
+                    android:id="@+id/owner_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/owner_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/event_location"
+                    app:layout_constraintEnd_toStartOf="@+id/event_owner"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/event_location"
+                    app:layout_constraintTop_toTopOf="@+id/event_location" />
+
+                <TextView
+                    android:id="@+id/event_owner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="100dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginStart="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/owner_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/owner_icon"
+                    app:layout_constraintTop_toTopOf="@+id/owner_icon"
+                    tools:text="Owner name" />
+
+                <ImageView
+                    android:contentDescription="@string/date"
+                    android:id="@+id/date_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/time"
+                    app:layout_constraintEnd_toStartOf="@+id/time_event"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_location" />
+
+                <TextView
+                    android:id="@+id/time_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/date_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/time_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/date_icon"
+                    app:layout_constraintTop_toTopOf="@+id/date_icon"
+                    tools:text="16:00 - 17:00" />
+
+                <ImageView
+                    android:contentDescription="@string/time"
+                    android:id="@+id/time_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/upcoming"
+                    app:layout_constraintBottom_toBottomOf="@+id/date_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/event_date"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/time_event"
+                    app:layout_constraintTop_toTopOf="@+id/date_icon" />
+
+                <TextView
+                    android:id="@+id/event_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/time_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/time_icon"
+                    app:layout_constraintTop_toTopOf="@+id/time_icon"
+                    tools:text="2025 - 15 - 02" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/event_category_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/event_participants_container"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/event_participants_container"
+                    app:layout_constraintTop_toTopOf="@+id/event_participants_container"
+                    android:backgroundTint="@color/category_bg">
+
+                    <TextView
+                        android:id="@+id/category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginVertical="8dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        tools:text="@string/event_category" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/event_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_summary"
+                    tools:text="This is content" />
+
+                <Button
+                    android:id="@+id/button_open"
+                    android:maxWidth="320dp"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/register"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event_desc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:visibility="visible"
+            android:id="@+id/placeholder_detail_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include layout="@layout/detail_placeholder" />
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

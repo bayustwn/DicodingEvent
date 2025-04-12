@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Dicoding Event</string>
+    <string name="home">Home</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="finished">Finished</string>
+    <string name="finished_event">Finished Event</string>
+    <string name="upcoming_event">Upcoming Event</string>
+    <string name="event_name">Name of the event using 2 lines of text in textview</string>
+    <string name="event_category">Seminar</string>
+    <string name="quota">%1$d / %2$d</string>
+    <string name="participans_value" tools:ignore="PluralsCandidate">%1$d Peserta</string>
+    <string name="event_time">%1$s - %2$s</string>
+    <string name="register">Daftar</string>
+    <string name="open">Lihat</string>
+    <string name="search">Search</string>
+    <string name="not_found">Data tidak ditemukan</string>
+    <string name="date">date</string>
+    <string name="owner">owner</string>
+    <string name="master_image">master_image</string>
+    <string name="location">location</string>
+    <string name="time">time</string>
+    <string name="participant">participant</string>
+    <string name="quota_remain">Sisa Kuota : %1$d</string>
+    <string name="unfavorite">unfavorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="favorite">Favorite</string>
+    <string name="no_fav">No favorite event</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="allow_notification">Allow Notification</string>
+    <string name="settings">Settings</string>
+</resources>

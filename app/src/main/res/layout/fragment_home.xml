@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+   <androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragment.HomeFragment"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="14dp"
+                android:contentDescription="@string/settings"
+                android:src="@drawable/settings"
+                app:layout_constraintBottom_toBottomOf="@+id/upcoming_event_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/upcoming_event_title" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/upcoming_preview_event_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginBottom="6dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/finished_event_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upcoming_event_title">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/upcoming_preview_placeholder" />
+
+                    <include layout="@layout/upcoming_preview_placeholder" />
+
+                    <include layout="@layout/upcoming_preview_placeholder" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+            <TextView
+                android:layout_marginHorizontal="14dp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                android:textSize="24sp"
+                android:id="@+id/upcoming_event_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/upcoming_event"
+                app:layout_constraintBottom_toTopOf="@+id/rv_upcoming_event"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:overScrollMode="never"
+                android:visibility="invisible"
+                android:clipToPadding="false"
+                android:paddingHorizontal="14dp"
+                android:layout_marginVertical="8dp"
+                android:id="@+id/rv_upcoming_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/upcoming_event_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/finished_event_title"
+                tools:listitem="@layout/upcoming_preview_item"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                />
+
+            <TextView
+                android:id="@+id/finished_event_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="14dp"
+                android:text="@string/finished_event"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/rv_finished_preview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_upcoming_event" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/finished_placeholder"
+                android:layout_marginHorizontal="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/finished_event_title">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/finished_placeholder" />
+
+                    <include layout="@layout/finished_placeholder" />
+
+                    <include layout="@layout/finished_placeholder" />
+
+                    <include layout="@layout/finished_placeholder" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="invisible"
+                android:layout_marginHorizontal="14dp"
+                android:overScrollMode="never"
+                tools:listitem="@layout/finished_item"
+                android:layout_marginVertical="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/finished_event_title"
+                android:id="@+id/rv_finished_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
